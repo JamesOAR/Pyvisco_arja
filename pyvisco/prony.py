@@ -841,6 +841,7 @@ def plot_param(prony_list, labels=None):
     df_list = []
     for i, prony in enumerate(prony_list):
         df = prony['df_terms'][['tau_i', 'alpha_i']].copy()
+        df['tau_i']=int(df['tau_i'])
         df = df.set_index('tau_i')
         if labels:
             df.columns = [labels[i]]
